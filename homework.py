@@ -22,14 +22,11 @@ class User():
         return f"<User | {self.full_name}, email: {self.email}, ID: {self.id} created on {self.created_on.strftime('%c')}>"
     
     def __repr__(self):
-        return f"<User | {self.full_name} created on {self.created_on.strftime('%c')}>"
+        return f"<User | {self.full_name}, email: {self.email}, ID: {self.id} created on {self.created_on.strftime('%c')}>"
 
     def __eq__(self, __o):
         return self.email == __o.email
-
-    def __eq__(self, __o):
-        return self.created_on == __o.created_on
-    
+   
     def __lt__(self, __o):
         return self.created_on < __o.created_on
 
@@ -79,7 +76,7 @@ amazon = Employee(first_name='Jeff', last_name='Bezos', email='jb@amazon.com', h
 
 kojima = Employee(first_name='Hideo', last_name='Kojima', email='hiko@kokimap.com', home_address='Tokyo, Japan', security_level='green', department='games')
 
-apple = Employee(first_name='Tim', last_name='Cook', email='timcook@apple.com', home_address='Cupertino, CA', security_level='apple', department='phones')
+apple = Employee(first_name='Tim', last_name='Cook', email='sbobsp@bikinibottom.com', home_address='Cupertino, CA', security_level='apple', department='phones')
 
 # Customers
 spongebob = Customer(first_name='SpongeBob', last_name='SquarePants', email='sbobsp@bikinibottom.com', shipping_address='Pineapple, BB', billing_address='Pineapple ATTN Gary, BB', purchase_history='Krabby Patty')
@@ -94,6 +91,23 @@ users.sort()
 
 count = 1
 for user in users:
-    print(f"\n{count}. {user}")
+    print(f"{count}. {user}")
     count += 1
+
+# All Users should be hashable
+print("\nUSERS HASH")
+for user in users:
+    print(f"{user} - HASH {hash(user)}")
+
+
+
+# Two Users are the same if they have the same email
+print("\nIs email the same?")
+print(spongebob)
+print(apple)
+print(spongebob == apple) # True
+print("-"*130)
+print(apple)
+print(forrest)
+print(apple == forrest) # False
 
