@@ -19,7 +19,7 @@ class User():
         return self.first_name + " " + self.last_name
 
     def __str__(self):
-        return f"<User | {self.full_name} created on {self.created_on.strftime('%c')}>"
+        return f"<User | {self.full_name}, email: {self.email}, ID: {self.id} created on {self.created_on.strftime('%c')}>"
     
     def __repr__(self):
         return f"<User | {self.full_name} created on {self.created_on.strftime('%c')}>"
@@ -82,13 +82,13 @@ kojima = Employee(first_name='Hideo', last_name='Kojima', email='hiko@kokimap.co
 apple = Employee(first_name='Tim', last_name='Cook', email='timcook@apple.com', home_address='Cupertino, CA', security_level='apple', department='phones')
 
 # Customers
-spongebob = Customer('SpongeBob', 'SquarePants', 'sbobsp@bikinibottom.com', 'Pineapple, BB', 'Pineapple ATTN Gary, BB', 'Krabby Patty')
+spongebob = Customer(first_name='SpongeBob', last_name='SquarePants', email='sbobsp@bikinibottom.com', shipping_address='Pineapple, BB', billing_address='Pineapple ATTN Gary, BB', purchase_history='Krabby Patty')
 
-chandler = Customer('Chandler', 'Bing', 'mrbigbing@friends.com', '90 Bedford St, NY', '90 Bedford St, NY', 'Duck, Chicken')
+chandler = Customer(first_name='Chandler', last_name='Bing', email='mrbigbing@friends.com', shipping_address='90 Bedford St, NY', billing_address='90 Bedford St, NY', purchase_history='Duck, Chicken')
 
-forrest = Customer('Forrest', 'Gump', 'fgumpg@yahoo.com', '3547 Combahee Road, CA', "DON'T NEED", 'Shrimps')
+forrest = Customer(first_name='Forrest', last_name='Gump', email='fgumpg@yahoo.com', shipping_address='3547 Combahee Road, CA', billing_address="DON'T NEED", purchase_history='Shrimps')
 
-print(spongebob)
+
 users = [spongebob, chandler, forrest, amazon, kojima, apple]
 users.sort()
 
