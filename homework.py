@@ -1,4 +1,5 @@
 from datetime import datetime as dt
+from time import sleep
 
 
 class User():
@@ -91,12 +92,14 @@ users.sort()
 
 count = 1
 for user in users:
+    
     print(f"{count}. {user}")
     count += 1
 
 # All Users should be hashable
 print("\nUSERS HASH")
 for user in users:
+    sleep(1)
     print(f"{user} - HASH {hash(user)}")
 
 
